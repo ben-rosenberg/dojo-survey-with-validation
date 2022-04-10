@@ -1,0 +1,46 @@
+@model SurveyModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <form action="/process" method="post">
+        <label asp-for="Name">Your Name:</label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span><br>
+        <label asp-for="DojoLocation">Dojo Location:</label>
+        <select asp-for="DojoLocation">
+            <option value="San Jose">San Jose</option>
+            <option value="Burbank">Burbank</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Online">Online</option>
+        </select>
+        <span asp-validation-for="DojoLocation"></span><br>
+        <label asp-for="FavoriteLanguage">Favorite Programming Language:</label>
+        <select asp-for="FavoriteLanguage">
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Rust">Rust</option>
+            <option value="Fortran">Fortran</option>
+            <option value="Assembly">Assembly</option>
+        </select>
+        <span asp-validation-for="FavoriteLanguage"></span><br>
+        <label asp-for="Comments">Comments (optional):</label><br>
+        <textarea asp-for="Comments" cols="30" rows="10"></textarea>
+        <span asp-validation-for="Comments"></span><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
